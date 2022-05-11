@@ -52,8 +52,8 @@ class Drone_state_monitor:
 
         
     def Velocity_callback(self, msg):
-        client.publish('Velocity' , str(msg.twist.linear), qos = 0)
- 
+        client.publish('Velocity-x' , str(msg.twist.linear.x), qos = 0)
+        client.publish('Velocity-y' , str(msg.twist.linear.y), qos = 0)
 
     def Altitude_callback(self, msg):
         client.publish('Altitude' , msg.data, qos = 0)
